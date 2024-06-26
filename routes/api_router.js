@@ -116,4 +116,18 @@ router.get("/api/recipeUser/recipes/:userId", async (req, res, next) => {
     .catch(next);
 });
 
+router.get("/api/user/:email", async (req, res, next) => {
+  const { email } = req.params;
+  const sql = `
+    SELECT id FROM users
+    WHERE email = $1;
+  `;
+  const sqlParams = [email];
+  return db
+    .query(sql, sqlParams)
+    .then((result) => result.rows[0].id)
+    .then((data) => res.status(200).json(data))
+    .catch(next);
+});
+
 module.exports = router;
