@@ -7,6 +7,6 @@ tmp
 venv
 __pycache__
 .env
-db/playground.js
+db/fridge_to_fork_api.sql
 fridgeToFork.pem
 app.zip
