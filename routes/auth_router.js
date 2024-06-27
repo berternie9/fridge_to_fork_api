@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 
 router.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://d1qtxu7qgkj0oi.cloudfront.net/",
     credentials: true,
   })
 );
@@ -18,7 +18,10 @@ router.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false },
+    cookie: {
+      secure: true,
+      sameSite: "None",
+    },
   })
 );
 
@@ -67,7 +70,9 @@ router.get(
       process.env.SESSION_SECRET,
       { expiresIn: "1h" }
     );
-    res.redirect(`http://localhost:5173/?token=${token}`);
+    res.redirect(
+      `https://vho1awboug.execute-api.us-east-1.amazonaws.com/?token=${token}`
+    );
   }
 );
 
@@ -76,7 +81,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173");
+    res.redirect("https://vho1awboug.execute-api.us-east-1.amazonaws.com");
   });
 });
 
