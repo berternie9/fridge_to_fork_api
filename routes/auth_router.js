@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 
 router.use(
   cors({
-    origin: "https://d1qtxu7qgkj0oi.cloudfront.net/",
+    origin: "https://d1qtxu7qgkj0oi.cloudfront.net",
     credentials: true,
   })
 );
@@ -70,9 +70,7 @@ router.get(
       process.env.SESSION_SECRET,
       { expiresIn: "1h" }
     );
-    res.redirect(
-      `https://vho1awboug.execute-api.us-east-1.amazonaws.com/?token=${token}`
-    );
+    res.redirect(`https://d1qtxu7qgkj0oi.cloudfront.net/?token=${token}`);
   }
 );
 
@@ -81,7 +79,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("https://vho1awboug.execute-api.us-east-1.amazonaws.com");
+    res.redirect("https://d1qtxu7qgkj0oi.cloudfront.net");
   });
 });
 
