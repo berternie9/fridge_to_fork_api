@@ -6,11 +6,24 @@ router.get("/spoonacularApi/recipes", async (req, res) => {
   const { includeIngredients, cuisine, diet } = req.query;
   try {
     const response = await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONACULAR_KEY}&includeIngredients=${includeIngredients}&cuisine=${cuisine}&diet=${diet}&number=4&limitLicense=true&ignorePantry=false`
+      `https://api.spoonacular.com/recipes/complexSearch`,
+      {
+        params: {
+          apiKey: process.env.SPOONACULAR_KEY,
+          includeIngredients,
+          cuisine,
+          diet,
+          number: 4,
+          limitLicense: true,
+          ignorePantry: false,
+        },
+      }
     );
+    console.log("Spoonacular API Response:", response.data);
     res.json(response.data);
   } catch (err) {
-    res.status(500).send(err.message);
+    console.error("Error fetching recipes from Spoonacular:", err.message);
+    res.status(500).send(`Error: ${err.message}`);
   }
 });
 
