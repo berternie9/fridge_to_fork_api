@@ -30,7 +30,8 @@ passport.use(
     {
       clientID: process.env.OAUTH_CLIENT_ID,
       clientSecret: process.env.OAUTH_SECRET,
-      callbackURL: "http://localhost:8080/auth/google/callback",
+      callbackURL:
+        "https://vho1awboug.execute-api.us-east-1.amazonaws.com/auth/google/callback",
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, done) {
