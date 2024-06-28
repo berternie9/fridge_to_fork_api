@@ -62,7 +62,6 @@ router.get(
       process.env.SESSION_SECRET,
       { expiresIn: "1h" }
     );
-    console.log(token);
     res.redirect(`https://d1qtxu7qgkj0oi.cloudfront.net/?token=${token}`);
   }
 );
