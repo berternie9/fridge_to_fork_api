@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 10000;
-const cors = require("cors");
 const spoonacularRouter = require("./routes/spoonacular_router");
 const apiRouter = require("./routes/api_router");
 const authRouter = require("./routes/auth_router");
@@ -10,8 +10,7 @@ const errorHandler = require("./middlewares/error_handler");
 
 app.use(
   cors({
-    origin: "https://fridge-to-fork-api.onrender.com",
-    credentials: true,
+    origin: "https://d3sz4nnc22evgw.cloudfront.net/",
   })
 );
 
