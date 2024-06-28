@@ -12,7 +12,7 @@ const errorHandler = require("./middlewares/error_handler");
 
 app.use(
   cors({
-    origin: "https://d1qtxu7qgkj0oi.cloudfront.net",
+    origin: "http://localhost:8080",
     credentials: true,
   })
 );
