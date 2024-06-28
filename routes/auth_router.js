@@ -26,7 +26,7 @@ passport.use(
       clientID: process.env.OAUTH_CLIENT_ID,
       clientSecret: process.env.OAUTH_SECRET,
       callbackURL:
-        "https://vho1awboug.execute-api.us-east-1.amazonaws.com/auth/google/callback",
+        "https://fridge-to-fork-api.onrender.com/auth/google/callback",
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, done) {
@@ -72,7 +72,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("https://d1qtxu7qgkj0oi.cloudfront.net");
+    res.redirect("https://d1qtxu7qgkj0oi.cloudfront.net/");
   });
 });
 
