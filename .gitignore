@@ -7,6 +7,6 @@ tmp
 venv
 __pycache__
 .env
-db/fridge_to_fork_api.sql
+db/*.sql
 fridgeToFork.pem
 app.zip

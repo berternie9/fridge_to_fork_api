@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 8080;
+const port = 10000;
 const cors = require("cors");
 const spoonacularRouter = require("./routes/spoonacular_router");
 const apiRouter = require("./routes/api_router");
@@ -10,7 +10,7 @@ const errorHandler = require("./middlewares/error_handler");
 
 app.use(
   cors({
-    origin: "http://localhost:8080",
+    origin: "https://fridge-to-fork-api.onrender.com",
     credentials: true,
   })
 );
@@ -24,5 +24,5 @@ app.use(apiRouter);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
+  console.log(`Server listening on port: ${port}`);
 });

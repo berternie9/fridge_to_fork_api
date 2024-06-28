@@ -25,7 +25,8 @@ passport.use(
     {
       clientID: process.env.OAUTH_CLIENT_ID,
       clientSecret: process.env.OAUTH_SECRET,
-      callbackURL: "http://localhost:8080/auth/google/callback",
+      callbackURL:
+        "https://fridge-to-fork-api.onrender.com/auth/google/callback",
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, done) {
@@ -61,7 +62,7 @@ router.get(
       process.env.SESSION_SECRET,
       { expiresIn: "1h" }
     );
-    res.redirect(`http://localhost:5173/?token=${token}`);
+    res.redirect(`https://d3sz4nnc22evgw.cloudfront.net/?token=${token}`);
   }
 );
 
@@ -70,7 +71,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173/");
+    res.redirect("https://d3sz4nnc22evgw.cloudfront.net");
   });
 });
 

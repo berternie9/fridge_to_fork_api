@@ -20,7 +20,6 @@ router.get("/spoonacularApi/recipes", async (req, res) => {
         timeout: 30000,
       }
     );
-    console.log("Spoonacular API Response:", response.data);
     res.json(response.data);
   } catch (err) {
     console.error("Error fetching recipes from Spoonacular:", err.message);
