@@ -62,7 +62,7 @@ router.get(
       process.env.SESSION_SECRET,
       { expiresIn: "1h" }
     );
-    res.redirect(`https://d1qtxu7qgkj0oi.cloudfront.net/?token=${token}`);
+    res.redirect(`https://d3sz4nnc22evgw.cloudfront.net/?token=${token}`);
   }
 );
 
@@ -71,7 +71,7 @@ router.get("/logout", (req, res) => {
     if (err) {
       return next(err);
     }
-    res.redirect("https://d1qtxu7qgkj0oi.cloudfront.net/");
+    res.redirect("https://d3sz4nnc22evgw.cloudfront.net/");
   });
 });
 
