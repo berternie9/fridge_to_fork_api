@@ -3,15 +3,7 @@ const router = express.Router();
 const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
-const cors = require("cors");
 const jwt = require("jsonwebtoken");
-
-router.use(
-  cors({
-    origin: "https://d1qtxu7qgkj0oi.cloudfront.net",
-    credentials: true,
-  })
-);
 
 router.use(
   session({
