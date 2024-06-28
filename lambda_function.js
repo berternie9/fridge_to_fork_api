@@ -8,7 +8,7 @@ const apiRouter = require("./routes/api_router");
 const authRouter = require("./routes/auth_router");
 const errorHandler = require("./middlewares/error_handler");
 
-router.use(
+app.use(
   cors({
     origin: "https://d1qtxu7qgkj0oi.cloudfront.net",
     credentials: true,
