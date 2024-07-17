@@ -10,7 +10,7 @@ const errorHandler = require("./middlewares/error_handler");
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.GITHUB_URL,
     credentials: true,
   })
 );
@@ -25,5 +25,4 @@ app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
-  console.log(process.env.FRONTEND_URL);
 });
