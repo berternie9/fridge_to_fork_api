@@ -122,12 +122,12 @@ router.get("/api/recipeUser/recipes/:userId", (req, res, next) => {
 
 router.get("/api/user/:email", (req, res, next) => {
   const { email } = req.params;
-  const encodedEmail = encodeURIComponent(email);
+  // const encodedEmail = encodeURIComponent(email);
   const sql = `
     SELECT id FROM users
     WHERE email = $1;
   `;
-  const sqlParams = [encodedEmail];
+  const sqlParams = [email];
   db.query(sql, sqlParams)
     .then((result) => {
       if (!result.rows.length) {

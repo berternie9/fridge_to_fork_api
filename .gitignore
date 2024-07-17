@@ -9,5 +9,6 @@ __pycache__
 .env
 db/*.sql
 db/playground.js
+db/*.dump
 fridgeToFork.pem
 app.zip
